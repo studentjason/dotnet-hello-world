@@ -29,7 +29,8 @@ public class UsdtController : Controller
         ViewData["MaicoinRatePrice"] = fetchMaicoinRateTask.Result.close;
         ViewData["MaicoinRateTime"] = fetchMaicoinRateTask.Result.time;
         ViewData["MaicoinRateUtctime"] = fetchMaicoinRateTask.Result.UtcTime.ToString("yyyy/MM/dd HH:mm:ss");
-        ViewData["RateDiff"] = Math.Round((double)ViewData["MaicoinRatePrice"] - (double)ViewData["rybitCoinRatePrice"], 3);
+        var rateDiff = (((double)ViewData["MaicoinRatePrice"] - (double)ViewData["rybitCoinRatePrice"]) / (double)ViewData["rybitCoinRatePrice"]) * 100;
+        ViewData["RateDiff"] = Math.Round(rateDiff, 3);
 
         return View();
     }
