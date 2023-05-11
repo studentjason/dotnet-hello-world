@@ -1,0 +1,36 @@
+<style>
+table, th, td {
+  text-align: right;
+  font-size: 26px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 4px;
+}
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>交易所</th>
+            <th>Time</th>
+            <th>Rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Rybit</td>
+            <td>@ViewData["rybitCoinRateUtctime"]</td>
+            <td>@ViewData["rybitCoinRatePrice"]</td>
+        </tr>
+        <tr>
+            <td>Max</td>
+            <td>@ViewData["MaicoinRateUtctime"]</td>
+            <td>@ViewData["MaicoinRatePrice"]</td>
+        </tr>
+        <tr>
+            <td>差額</td>
+            <td></td>
+            <td>@ViewData["RateDiff"]</td>
+        </tr>
+    </tbody>
+</table>

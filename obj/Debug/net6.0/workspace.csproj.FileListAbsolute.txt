@@ -24,3 +24,5 @@
 /home/ubuntu/workspace/obj/Debug/net6.0/workspace.pdb
 /home/ubuntu/workspace/obj/Debug/net6.0/workspace.genruntimeconfig.cache
 /home/ubuntu/workspace/obj/Debug/net6.0/ref/workspace.dll
+/home/ubuntu/workspace/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/ubuntu/workspace/obj/Debug/net6.0/workspace.csproj.CopyComplete

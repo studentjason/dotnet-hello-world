@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JwQ/ppikasy5hMc2rNL2R/Gf+J4URf0WF3V9mmgtdn6b2wyGXmvcxdxgfJLlNE4MyZFnfo475TTdJcdIKuHHtA==",
+  "dgSpecHash": "mUSX6VGE/3O51ZX39/WA6C+TS1rux/9G/OLUdBuZNG//WLreemnRONR2dw/MdMC8x6RMbZoOsVOJjpBH9le3Cg==",
   "success": true,
   "projectFilePath": "/home/ubuntu/workspace/workspace.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/ubuntu/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
