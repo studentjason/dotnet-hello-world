@@ -16,10 +16,9 @@ jobs:
         PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
         SERVICE_NAME: usdt-comparator
         IMAGE: gcr.io/$PROJECT_ID/$SERVICE_NAME
+        GCP_JSON: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
       run: |
         echo ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }} | base64 --decode > key.json
         gcloud auth activate-service-account --key-file=key.json
         gcloud config set project $PROJECT_ID
         docker buildx build --platform linux/amd64,linux/arm64 --push -t $IMAGE .
-      env:
-        GCP_JSON: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
