@@ -1,0 +1,13 @@
+/home/ubuntu/workspace/out/workspace
+/home/ubuntu/workspace/out/nuget.config
+/home/ubuntu/workspace/out/appsettings.Development.json
+/home/ubuntu/workspace/out/appsettings.json
+/home/ubuntu/workspace/out/workspace.dll
+/home/ubuntu/workspace/out/workspace.deps.json
+/home/ubuntu/workspace/out/workspace.runtimeconfig.json
+/home/ubuntu/workspace/out/workspace.pdb
+/home/ubuntu/workspace/out/Newtonsoft.Json.dll
+/home/ubuntu/workspace/out/xunit.abstractions.dll
+/home/ubuntu/workspace/out/xunit.assert.dll
+/home/ubuntu/workspace/out/xunit.core.dll
+/home/ubuntu/workspace/out/xunit.execution.dotnet.dll

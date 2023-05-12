@@ -26,8 +26,6 @@
 /home/ubuntu/workspace/obj/Debug/net6.0/ref/workspace.dll
 /home/ubuntu/workspace/bin/Debug/net6.0/Newtonsoft.Json.dll
 /home/ubuntu/workspace/obj/Debug/net6.0/workspace.csproj.CopyComplete
-/home/ubuntu/workspace/bin/Debug/net6.0/UnitTests/obj/project.assets.json
-/home/ubuntu/workspace/bin/Debug/net6.0/UnitTests/obj/UnitTests.csproj.nuget.dgspec.json
 /home/ubuntu/workspace/bin/Debug/net6.0/xunit.abstractions.dll
 /home/ubuntu/workspace/bin/Debug/net6.0/xunit.assert.dll
 /home/ubuntu/workspace/bin/Debug/net6.0/xunit.core.dll
