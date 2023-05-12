@@ -1,27 +1,25 @@
-name: Build and Deploy to Cloud Run
-
+name: Build and deploy Docker image to Cloud Run
 on:
   push:
     branches:
-    - main
-
+      - main
 jobs:
-  setup-build-deploy:
-    name: Setup, Build, and Deploy
+  build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@main
-
-    # Setup gcloud CLI
-    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@main
-      with:
-        version: '286.0.0'
-        service_account_email: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
-        service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
-        project_id: ${{ secrets.GCP_PROJECT_ID }}
-        export_default_credentials: true
-        
-    # Print gcloud info
-    - name: Info
-      run: gcloud info
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+    - name: Build and push Docker image to Cloud Run
+      env:
+        PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        SERVICE_NAME: usdt-comparator
+        IMAGE: gcr.io/$PROJECT_ID/$SERVICE_NAME
+      run: |
+        echo ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }} | base64 --decode > key.json
+        gcloud auth activate-service-account --key-file=key.json
+        gcloud config set project $PROJECT_ID
+        docker buildx build --platform linux/amd64,linux/arm64 --push -t $IMAGE .
+      env:
+        GCP_JSON: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
