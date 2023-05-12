@@ -3,7 +3,7 @@ name: Deploy to GCP Container Registry
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-deploy:
