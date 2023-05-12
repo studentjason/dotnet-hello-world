@@ -1,0 +1,28 @@
+name: Deploy to GCP Container Registry
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.1
+      - name: Build the application
+        run: dotnet build -c Release
+      - name: Login to Google Cloud
+        uses: google-actions/gcloud@v0.2.0
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+      - name: Push the image to Google Container Registry
+        run: docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest
+      - name: Deploy the application to GCP Cloud Run
+        run: gcloud run deploy my-app --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/my-app:latest

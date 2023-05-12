@@ -1,20 +1,19 @@
 {
   "format": 1,
   "restore": {
-    "/home/ubuntu/workspace/workspace.csproj": {}
+    "/home/ubuntu/workspace/UnitTests/UnitTests.csproj": {}
   },
   "projects": {
-    "/home/ubuntu/workspace/workspace.csproj": {
+    "/home/ubuntu/workspace/UnitTests/UnitTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ubuntu/workspace/workspace.csproj",
-        "projectName": "workspace",
-        "projectPath": "/home/ubuntu/workspace/workspace.csproj",
+        "projectUniqueName": "/home/ubuntu/workspace/UnitTests/UnitTests.csproj",
+        "projectName": "UnitTests",
+        "projectPath": "/home/ubuntu/workspace/UnitTests/UnitTests.csproj",
         "packagesPath": "/home/ubuntu/.nuget/packages/",
-        "outputPath": "/home/ubuntu/workspace/obj/",
+        "outputPath": "/home/ubuntu/workspace/UnitTests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/ubuntu/workspace/nuget.config",
           "/home/ubuntu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
@@ -39,13 +38,25 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Newtonsoft.Json": {
+            "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[13.0.3, )"
+              "version": "[17.1.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
             },
             "xunit": {
               "target": "Package",
-              "version": "[2.4.2, )"
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
             }
           },
           "imports": [
@@ -60,9 +71,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
