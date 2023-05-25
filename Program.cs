@@ -23,4 +23,5 @@ app.UseAuthorization();
 app.MapDefaultControllerRoute();
 // app.MapRazorPages();
 
+app.Urls.Add($"http://0.0.0.0:8080");
 app.Run();
