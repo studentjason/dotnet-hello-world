@@ -16,7 +16,7 @@ public class UsdtController : Controller
     {
         _httpClientFactory = httpClientFactory;
     }
-    
+
     [HttpGet()]
     public IActionResult Index()
     {
@@ -44,7 +44,8 @@ public class UsdtController : Controller
         client.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3");
 
         // 設定要取得的網址
-        var url = "https://www.rybit.com/wallet-api/v1/kgi/exchange-rates/?symbol=USDT_TWD&client_id=rybit_web_v2023.05.08.40&device_id=ca008fec-9dfb-4d9b-849f-ef730bc15eb3&fp_did=unknown&app_ver=v2023.05.08.40&tz_name=Asia%2FTaipei&tz_offset=28800&sys_lang=zh-TW&app_lang=zh-TW";
+        // var url = "https://www.rybit.com/wallet-api/v1/kgi/exchange-rates/?symbol=USDT_TWD&client_id=rybit_web_v2023.05.08.40&device_id=ca008fec-9dfb-4d9b-849f-ef730bc15eb3&fp_did=unknown&app_ver=v2023.05.08.40&tz_name=Asia%2FTaipei&tz_offset=28800&sys_lang=zh-TW&app_lang=zh-TW";
+        var url = "https://azureserv.com/wallet-api/v1/kgi/exchange-rates/?symbol=USDT_TWD&client_id=rybit_web_v2023.05.08.40&device_id=ca008fec-9dfb-4d9b-849f-ef730bc15eb3&fp_did=unknown&app_ver=v2023.05.08.40&tz_name=Asia%2FTaipei&tz_offset=28800&sys_lang=zh-TW&app_lang=zh-TW&__cpo=aHR0cHM6Ly93d3cucnliaXQuY29t";
 
         // 發送 HTTP GET 請求並取得回應
         var response = await client.GetAsync(url);
